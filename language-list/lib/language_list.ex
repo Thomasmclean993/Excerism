@@ -28,6 +28,6 @@ defmodule LanguageList do
 
   def exciting_list?(list) do
     # Please implement the exciting_list?/1 function
-    Enum.find_value(["elixir"],fn enum -> enum = "elixir" end)
+    "Elixir" in list
   end
 end
