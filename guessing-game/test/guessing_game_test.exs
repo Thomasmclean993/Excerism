@@ -36,3 +36,6 @@ defmodule GuessingGameTest do
     assert GuessingGame.compare(16, :no_guess) == "Make a guess"
   end
 end
+#def leap_year?(year) when rem(year, 100) == 0 and rem(year,400) != 0, do: false
+  #def leap_year?(year) when rem(year, 400) == 0, do: true
+  #def leap_year?(_year), do: false
