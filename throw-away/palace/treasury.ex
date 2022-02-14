@@ -8,27 +8,27 @@ handle_cast(pid, message) -> An async call that doesn't demand an answer from th
 handle_call(pid, from, message) -> A synchronous call that demands an answer from server, {:reply, reply, state}
 """
 #cilent ->
-def open() do
-  Genserver.start_link(__MODULE__, 0, name: __MODULE__) # start the Genserver process
-end
+  def open() do
+    Genserver.start_link(__MODULE__, 0, name: __MODULE__) # start the Genserver process
+  end
 
-def store(amount) do
-  GenServer.cast(__MODULE__, {:store, amount}) # sends a asynchronous request to the server
-end
+  def store(amount) do
+    GenServer.cast(__MODULE__, {:store, amount}) # sends a asynchronous request to the server
+  end
 
-def withdraw(amount) do
-  Genserver.cast(__MODULE__, {:withdraw, amount}) #
-end
+  def withdraw(amount) do
+    Genserver.cast(__MODULE__, {:withdraw, amount}) #
+  end
 
-def get_balance() do
-  Genserver.call (__MODULE__, :balance) # sends a sychronous request to the server and waits for a reply
-end
+  def get_balance() do
+    Genserver.call (__MODULE__, :balance) # sends a sychronous request to the server and waits for a reply
+  end
 
 
 
 
 #callbacks
-def inti(balance) do
+  def inti(balance) do
     {:ok, balance}
   end
 
